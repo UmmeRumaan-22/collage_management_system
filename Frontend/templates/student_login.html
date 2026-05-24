@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Login</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+    <h1>Student Login</h1>
+</header>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="card">
+
+<h2>Login as Student</h2>
+
+<form action="/student-login" method="POST">
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<br>
+
+<p>
+Don't have an account?
+<a href="/student-register">
+    Signup Here
+</a>
+</p>
+
+{% if message %}
+<p style="color:red;">
+    {{ message }}
+</p>
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Feedbacks</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+.feedback-card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.feedback-card h3{
+    color:#4e54c8;
+}
+
+.feedback-card small{
+    color:gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Student Feedbacks</h1>
+</header>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+{% if feedbacks %}
+
+    {% for feedback in feedbacks %}
+
+    <div class="feedback-card">
+
+        <h3>{{ feedback.name }}</h3>
+
+        <p>{{ feedback.message }}</p>
+
+        <small>
+            Submitted:
+            {{ feedback.submitted_at }}
+        </small>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="card">
+
+        <p>No feedbacks available</p>
+
+    </div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

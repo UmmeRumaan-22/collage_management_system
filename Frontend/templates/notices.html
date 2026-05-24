@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Notices</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+.notice-card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.notice-card h3{
+    color:#4e54c8;
+}
+
+.notice-card p{
+    margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<h2>College Notices</h2>
+
+{% if notices %}
+
+    {% for notice in notices %}
+
+    <div class="notice-card">
+
+        <h3>{{ notice.title }}</h3>
+
+        <p>{{ notice.message }}</p>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No notices available</p>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

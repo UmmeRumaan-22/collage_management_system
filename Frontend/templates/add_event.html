@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Add Event</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="card">
+
+<h2>Add New Event</h2>
+
+<form method="POST">
+
+<label>Event Name</label>
+<input type="text" name="event_name" required>
+
+<label>Event Date</label>
+<input type="date" name="event_date" required>
+
+<label>Event Time</label>
+<input type="time" name="event_time" required>
+
+<label>Venue</label>
+<input type="text" name="venue" required>
+
+<label>Description</label>
+<textarea name="description" rows="5" required></textarea>
+
+<label>Department</label>
+
+<select name="department_id" required>
+
+<option value="1">CSE</option>
+<option value="2">ECE</option>
+<option value="3">EEE</option>
+<option value="4">MECH</option>
+<option value="5">CIVIL</option>
+
+</select>
+
+<button type="submit">Add Event</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

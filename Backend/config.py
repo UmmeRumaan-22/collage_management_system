@@ -1,0 +1,5 @@
+MYSQL_HOST = "localhost"
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "rumaan@22"
+MYSQL_DB = "college_event_management"
+# SECRET_KEY = "secretkey"

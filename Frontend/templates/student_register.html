@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Student Registration</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<form action="/student-register" method="POST">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<label>Phone</label>
+<input type="text" name="phone" required>
+
+<label>Department</label>
+<select name="department">
+
+<option value="1">CSE</option>
+<option value="2">ECE</option>
+<option value="3">EEE</option>
+<option value="4">MECH</option>
+<option value="5">CIVIL</option>
+
+</select>
+
+<label>Year</label>
+<select name="year">
+
+<option value="1st Year">1st Year</option>
+<option value="2nd Year">2nd Year</option>
+<option value="3rd Year">3rd Year</option>
+<option value="4th Year">4th Year</option>
+
+</select>
+
+<button type="submit">Register</button>
+
+</form>
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+
+</body>
+</html>

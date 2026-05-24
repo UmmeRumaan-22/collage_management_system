@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Manage Attendance</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<h2>Manage Attendance</h2>
+
+{% for row in records %}
+
+<div class="card">
+
+<h3>{{ row.name }}</h3>
+
+<p>{{ row.email }}</p>
+
+<p>
+Current Status:
+<strong>{{ row.status }}</strong>
+</p>
+
+<p>
+Date:
+{{ row.attendance_date }}
+</p>
+
+<form
+action="/update-attendance/{{ row.attendance_id }}"
+method="POST"
+>
+
+<select name="status">
+
+<option value="Present">
+Present
+</option>
+
+<option value="Absent">
+Absent
+</option>
+
+</select>
+
+<button type="submit">
+Update
+</button>
+
+</form>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

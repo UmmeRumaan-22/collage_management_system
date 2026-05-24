@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Add Notice</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="card">
+
+<h2>Add Notice</h2>
+
+<form method="POST">
+
+<label>Notice Title</label>
+<input type="text" name="title" required>
+
+<label>Message</label>
+<textarea name="message" required></textarea>
+
+<button type="submit">Add Notice</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

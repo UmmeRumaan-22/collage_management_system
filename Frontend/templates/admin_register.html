@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Signup</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<header>
+    <h1>Admin Signup</h1>
+</header>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="card">
+
+<form action="/admin-register" method="POST">
+
+<label>Username</label>
+<input type="text" name="username" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<button type="submit">Signup</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
